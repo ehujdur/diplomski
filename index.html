@@ -1,61 +1,266 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+	<title>Diplomski</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/solarized.css">
+	<link rel="stylesheet" href="css/overrides.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					<section>
-						<h1>Naslovna 1</h1>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sint inventore, magni ut quo magnam voluptatibus iure vitae? Nemo at totam iure. Quod accusantium corrupti voluptatibus, sapiente ea dolorum facilis.</p>
-					</section>
-					<section>
-						<h1>Naslovna 2</h1>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sint inventore, magni ut quo magnam voluptatibus iure vitae? Nemo at totam iure. Quod accusantium corrupti voluptatibus, sapiente ea dolorum facilis.</p>
-					</section>
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/monokai.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section id="first">
+				<section id="first-1">
+					<h2>PREDNOSTI IMPLEMENTACIJE SISTEMA KONTINUIRANE INTEGRACIJE</h2>
+					<p>Edin Hujdur</p>
+					<aside class="notes">
+						Dobar dan poštovana komisija, i poštovani gosti. Tema današnjeg rada jeste PREDNOSTI IMPLEMENTACIJE SISTEMA
+						KONTINUIRANE INTEGRACIJE.
+					</aside>
 				</section>
-				<section>
-					<h1>Kraj</h1>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sint inventore, magni ut quo magnam voluptatibus iure vitae? Nemo at totam iure. Quod accusantium corrupti voluptatibus, sapiente ea dolorum facilis.</p>
+			</section>
+			<section id="intro">
+				<section id="intro-0">
+					<h1>Uvod</h1>
 				</section>
-			</div>
+				<section id="intro-1">
+					<h3>Šta je DevOps?</h3>
+					<p class="fragment">DevOps je praksa operatera i razvojnih inženjera koji zajedno sudjeluju u cijelom životnom
+						ciklusu usluge, od dizajna do procesa razvoja do podrške proizvodnji</p>
+					<aside class="notes">
+						Prije nego li krenemo pričati šta je zaista KONTINUIRANA INTEGRACIJA, trebamo početi sa pojmom DevOps.
+						DevOps je praksa operatera i razvojnih inženjera koji zajedno sudjeluju u cijelom životnom ciklusu usluge,
+						od dizajna do procesa razvoja do podrške proizvodnji
+					</aside>
+				</section>
+				<section id="intro-2">
+					<img src="images/histzory.png" alt="">
+					<aside class="notes">
+						Na ovoj slici možemo da vidimo historijski razvoj softvera sa ekomonskog aspekta. Naravno vremenom se mjenja
+						tehnologija, ali ključno ovdje za ugledati jeste da je došlo do smanjenja troškova te ubrzane proizvodnj.
+						Postavlja se pitanje naravno, kako? Današnji rad, je jedan od faktora brže i sigurnije proizvodnje. Glavni
+						sistem ove teme je takozvani CI/CD
+					</aside>
+				</section>
+				<section id="intro-3">
+					<h3>Šta je CI/CD?</h3>
+					<p>
+						<ul>
+							<li class="fragment">CI – Continous Integration (kontinuirana integracija)</li>
+							<li class="fragment">CD – Continous Delivery (kontinuirana isporuka)</li>
+						</ul>
+					</p>
+					<aside class="notes">
+						Šta zapravo jeste CI/CD? To pitanje moramo u 2 dijela odgovoriti. Prvi dio je ujedno i ključni naziv našeg
+						rada: kontinuirana integracija, a drugi je kontinuirana isporuka
+					</aside>
+				</section>
+				<section id="intro-4">
+					<h3>Continous Integration (kontinuirana integracija)</h3>
+					<p class="fragment">Kontinuirana integracija (CI) je proces automatizacije izgradnje i testiranja koda svaki
+						put kada član tima izvrši promjene u kontroli verzija.</p>
+					<aside class="notes">
+						CI potiče razvojne programere da dijele svoje testove koda i jedinica spajanjem njihovih promjena u
+						spremište za zajedničku kontrolu verzija nakon svakog dovršetka malog zadatka. Prihvaćanje koda aktivira
+						automatizirani sustav za izgradnju kako bi se dohvatio najnoviji kod iz dijeljenog repository-a
+					</aside>
+				</section>
+				<section id=<section id="intro-5">
+					<img src="images/primjer-repo.png" alt="">
+					<aside class="notes">
+						Na slici imamo prikazano repository ili na našem spremište. U njemu se nalaze sve izmjene pisanje koda.
+						Vidimo da ima strukturu stabla.
+						Više o ovom u nastavku ali u današnjici pisanje koda se svede na modificiranje glavne grane pomoću
+						sporednih.
+					</aside>
+				</section>
+				<section id=<section id="intro-6">
+					<img src="images/travis.png" style="border: none; box-shadow: none" alt="">
+					<aside class="notes">
+						Za implementaciju CI u našem projektu, koristiti ćemo Travis CI. Travis CI je hostana solucija koja se
+						koristi kao servis. Besplatan je za open source projekte, a plaća se za privatne. Open source alternativa
+						koja se ne plaća u oba slučaja je Jenkins, ali on zahtjeva da vi sve konfigurišete dok Travis je većinu već
+						unaprijed za vas napravio
+					</aside>
+				</section>
+				<section id="intro-7">
+					<h3>Continous Delivery (kontinuirana isporuka)</h3>
+					<p class="fragment">Kontinuirana isporuka (CD) je mogućnost dobivanja promjena svih vrsta - uključujući nove
+						značajke, promjene konfiguracije, ispravke grešaka i eksperimente - u proizvodnju, ili u ruke korisnika,
+						sigurno i brzo na održiv način.</p>
+					<aside class="notes">
+						Neke od prednosti: Objavljivanje s niskim rizikom, Brže vrijeme na tržištu, Više kvalitete, Niži troškovi,
+						Bolji proizvodi, Zadovoljniji timovi. Za CD ćemo koristiti Google Cloud Platformu.
+					</aside>
+				</section>
+			</section>
+			<section id="tools">
+				<section id="tools-1">
+					<h1>Alati CI/CD sistema</h1>
+				</section>
+				<section id="tools-2">
+					<ul style="font-size: 1.4em">
+						<li>Git (Github)</li>
+						<li class="fragment">Docker</li>
+						<li class="fragment">Kubernetes</li>
+						<li class="fragment">Travis CI</li>
+						<li class="fragment">Google Cloud</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>Koristit ćemo git za kontrolu verzija i odrzavanje koda</li>
+							<li>Koristit ćemo docker za skladištenje aplikacije u funkcionalne jedinice ili <em>container-e</em></li>
+							<li>Koristit ćemo kubernetes za orkestraciju i upravljanje prethodno napravljenih <em>container-a</em></li>
+							<li>Travis CI za pravljenje pipelinea ili cjevovoda</li>
+							<li>Google Cloud za hostanje našeg projekta</li>
+						</ul>
+					</aside>
+				</section>
+				<section id="tools-3">
+					<h1>Git (Github)</h1>
+					<p class="fragment">Služi nam za održavanje koda i kontrolu verzije</p>
+				</section>
+				<section id="tools-4">
+					<h2>Kontrola verzije</h2>
+					<p class="fragment">Kontrola verzija je sustav koji bilježi promjene u datoteci ili skupu datoteka tijekom
+						vremena, tako da kasnije možete pozvati određene verzije.</p>
+				</section>
+				<section id="tools-5">
+					<img src="images/vcs3.png" alt="">
+				</section>
+				<section id="tools-6">
+					<img src="images/vcs1.png" alt="">
+				</section>
+				<section id="tools-7">
+					<img src="images/vcs2.png" style="height: 55vh" alt="">
+				</section>
+				<section id="tools-6">
+					<img src="images/github.png" style="height: 55vh" alt="">
+				</section>
+				<section id="tools-7">
+					<h1>Docker</h1>
+					<p class="fragment">Služi nam za pakovanje aplikacije u izolirana okruženja, tj. <em>container-e</em></p>
+				</section>
+				<section id="tools-8">
+					<img src="images/dcoker1.png" style="height: 55vh" alt="">
+				</section>
+				<section id="tools-9">
+					<img src="images/docker2.png" style="height: 55vh" alt="">
+				</section>
+				<section id="tools-10">
+					<img src="images/docker3.png" alt="">
+				</section>
+				<section id="tools-11">
+					<h1>Kubernetes</h1>
+					<p class="fragment">Služi nam za orkestraciju i upravljanje prethodno napravljenih <em>container-a</em></p>
+				</section>
+				<section id="tools-12">
+					<ul>
+						<li><b>Pod</b><span class="fragment"> - osnovna izvršna jedinica aplikacije Kubernetes - najmanja i najjednostavnija jedinica u objektnom modelu Kubernetes koju kreirate ili implementirate.</span></li>
+						<li class="fragment"><b>Master</b><span class="fragment"> - odgovoran za održavanje željenog stanja u klasteru</span></li>
+						<li class="fragment"><b>Node</b><span class="fragment"> - ili čvor, predstavlja radničku mašinu u Kubernetes-u. Node može biti VM ili fizički stroj, ovisno o klasteru.</span></li>
+					</ul>
+				</section>
+				<section id="tools-13">
+					<h1>Travis CI</h1>
+					<p class="fragment">Platforma za <em>kontinuiranu integraciju</em></p>
+				</section>
+				<section id="tools-14">
+					<img src="images/travis-gui.png" alt="">
+				</section>
+				<section id="tools-15">
+					<h2>Google Cloud Platform</h2>
+					<p class="fragment">hosting cloud provider</em></p>
+				</section>
+				<section id="tools-16">
+					<img src="images/gcp.png" alt="">
+				</section>
+				<section id="tools-17">
+					<ul>
+							<li>
+								<b>Google Kubernetes Engine (GKE)</b>
+								<span class="fragment">
+									- omogućuje brz razvoj aplikacija i iteraciju olakšavajući postavljanje, ažuriranje i upravljanje aplikacijama i uslugama. Kubernetes Engine nije samo za aplikacije bez stanja; možete priložiti trajnu pohranu i čak pokrenuti bazu podataka u klasteru.
+								</span>
+							</li>
+						</ul>
+				</section>
+			</section>
+			<section id="implementation">
+				<section id="implementation-1">
+						<h1>Implementacija</h1>
+				</section>
+				<section id="implementation-2">
+					<img src="images/config.png" style="height: 55vh" alt="">
+				</section>
+			</section>
+			<section id="conclusion">
+				<section id="conclusion-0">
+					<h2>Prednosti i nedostaci</h2>
+				</section>
+				<section id="conclusion-1">
+					<h2>Prednosti</h2>
+					<ul>
+						<li class="fragment">Brže ispravke grešaka</li>
+						<li class="fragment">Bolji kod, bolji timovi</li>
+						<li class="fragment">Poticanje brzog razvoja aplikacija</li>
+						<li class="fragment">Povećana učinkovitost i produktivnost</li>
+						<li class="fragment">Povećana ukupna automatizacija</li>
+					</ul>
+				</section>
+				<section id="conclusion-2">
+					<h2>Nedostaci</h2>
+					<ul>
+						<li class="fragment">Inicijalna ulaganja</li>
+						<li class="fragment">Interni otpor</li>
+						<li class="fragment">Često <em>commit</em>-anje koda</li>
+						<li class="fragment">Biranje metode za testiranje</li>
+					</ul>
+				</section>
+				<section id="conclusion-3">
+					<h1>Zaključak</h1>
+				</section>
+			</section>
+			<section id="end">
+				<h1>Hvala Vam na pažnji!</h1>
+			</section>
 		</div>
+	</div>
 
-		<script src="js/reveal.js"></script>
+	<script src="js/reveal.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
-			});
-		</script>
-	</body>
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true }
+			]
+		});
+	</script>
+</body>
+
 </html>
