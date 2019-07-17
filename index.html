@@ -84,6 +84,14 @@
 						automatizirani sustav za izgradnju kako bi se dohvatio najnoviji kod iz dijeljenog repository-a
 					</aside>
 				</section>
+				<section id="intro-4-1">
+					<img src="images/contint.png" style="height: 55vh" alt="">
+					<aside class="notes">
+						CI potiče razvojne programere da dijele svoje testove koda i jedinica spajanjem njihovih promjena u
+						spremište za zajedničku kontrolu verzija nakon svakog dovršetka malog zadatka. Prihvaćanje koda aktivira
+						automatizirani sustav za izgradnju kako bi se dohvatio najnoviji kod iz dijeljenog repository-a
+					</aside>
+				</section>
 				<section id=<section id="intro-5">
 					<img src="images/primjer-repo.png" alt="">
 					<aside class="notes">
@@ -112,6 +120,9 @@
 						Bolji proizvodi, Zadovoljniji timovi. Za CD ćemo koristiti Google Cloud Platformu.
 					</aside>
 				</section>
+				<section id="intro-7-1">
+					<img src="images/KevinDurant.png" style="height: 55vh" alt="">
+				</section>
 			</section>
 			<section id="tools">
 				<section id="tools-1">
@@ -124,6 +135,27 @@
 						<li class="fragment">Kubernetes</li>
 						<li class="fragment">Travis CI</li>
 						<li class="fragment">Google Cloud</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>Koristit ćemo git za kontrolu verzija i odrzavanje koda</li>
+							<li>Koristit ćemo docker za skladištenje aplikacije u funkcionalne jedinice ili <em>container-e</em></li>
+							<li>Koristit ćemo kubernetes za orkestraciju i upravljanje prethodno napravljenih <em>container-a</em></li>
+							<li>Travis CI za pravljenje pipelinea ili cjevovoda</li>
+							<li>Google Cloud za hostanje našeg projekta</li>
+						</ul>
+					</aside>
+				</section>
+				<section id="tools-2-1-0">
+					<h2>Alternative</h2>
+				</section>
+				<section id="tools-2-1-1">
+					<ul style="font-size: 1.4em">
+						<li>Mercurial SCM, Microsoft Team Foundation Server...</li>
+						<li class="fragment">Nanobox, rkt, Singularity Container...</li>
+						<li class="fragment">Docker Swarm, Red Hat OpenShift...</li>
+						<li class="fragment">Circle CI, Jenkins...</li>
+						<li class="fragment">Amazon Web Services, Heroku, Digital Ocean, Netlify...</li>
 					</ul>
 					<aside class="notes">
 						<ul>
@@ -172,6 +204,22 @@
 				<section id="tools-11">
 					<h1>Kubernetes</h1>
 					<p class="fragment">Služi nam za orkestraciju i upravljanje prethodno napravljenih <em>container-a</em></p>
+				</section>
+				<section id="tools-11-1">
+					<h2>Orkestracija containera</h2>
+					<p class="fragment">automatizacija svih aspekata koordinacije i upravljanja <em>container-ima</em>. Orkestracija <em>container-a</em> usmjerena je na upravljanje životnim ciklusom <em>container-a</em> i njihovim dinamičnim okruženjima</p>
+					<aside class="notes">
+						Container orchestration is used to automate the following tasks at scale:
+						• Configuring and scheduling of containers
+						• Provisioning and deployments of containers
+						• Availability of containers
+						• The configuration of applications in terms of the containers that they run in
+						• Scaling of containers to equally balance application workloads across infrastructure
+						• Allocation of resources between containers
+						• Load balancing, traffic routing and service discovery of containers
+						• Health monitoring of containers
+						• Securing the interactions between containers.
+					</aside>
 				</section>
 				<section id="tools-12">
 					<ul>
